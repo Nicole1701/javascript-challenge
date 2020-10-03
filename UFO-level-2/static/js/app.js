@@ -17,7 +17,12 @@ tableData.forEach((ufoData) => {
 });
 
 // Select the button
-button = d3.select("#filter-btn");
+letbutton = d3.select("#filter-btn");
+dateInput = d3.select(#datetime);
+cityInput = d3.select(#city);
+stateInput = d3.select(#state);
+countryInput = d3.select(#country);
+stateInput = d3.select(#shape); 
 
 const runEnter = () => {
   // Prevent the page from refreshing
@@ -26,32 +31,34 @@ const runEnter = () => {
   // Clear the previous table
   tbody.html("");
 
-  // Define the input element and value property
-  let inputElement = d3.select("#filter-btn");
-  let inputValue = inputElement.property("value");
+    let dateFilter = 
+//   // Define the input element and value property
+//   let inputElement = d3.select("#filter-btn");
+//   let inputValue = inputElement.property("value");
 
-  // Check inputValue
-  console.log(inputValue);
+//   // Check inputValue
+//   console.log(inputValue);
 
-  // Filter data
-  let filteredData = tableData.filter(
-    (sightings) => sightings.datetime === inputValue ||
-                    sightings.city === inputValue ||
-                    sightings.state === inputValue ||
-                    sightings.country === inputValue ||
-                    sightings.shape === inputValue ||
-  );
+//   // Filter data
+//   let filteredData = tableData.filter(
+//     (sightings) =>
+//       sightings.datetime === inputValue &&
+//       sightings.city === inputValue &&
+//       sightings.state === inputValue &&
+//       sightings.country === inputValue &&
+//       sightings.shape === inputValue
+//   );
 
-  // Check filteredData
-  console.log(filteredData);
+//   // Check filteredData
+//   console.log(filteredData);
 
-  filteredData.forEach((selection) => {
-    let row = tbody.append("tr");
-    Object.values(selection).forEach((value) => {
-      let cell = row.append("td");
-      cell.text(value);
-    });
-  });
-};
+//   filteredData.forEach((selection) => {
+//     let row = tbody.append("tr");
+//     Object.values(selection).forEach((value) => {
+//       let cell = row.append("td");
+//       cell.text(value);
+//     });
+//   });
+// };
 // Create event handlers
 button.on("click", runEnter);
