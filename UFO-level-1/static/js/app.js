@@ -18,9 +18,9 @@ tableData.forEach((ufoData) => {
 
 // Select the button
 button = d3.select("#filter-btn");
-form = d3.select("#ufo-form");
+resetButton = d3.select("#reset-btn");
 
-const runEnter = () => {
+const filterDate = () => {
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
@@ -50,5 +50,17 @@ const runEnter = () => {
     });
   });
 };
+
+const resetTable = () => {
+  tableData.forEach((ufoData) => {
+    let row = tbody.append("tr");
+    Object.values(ufoData).forEach((value) => {
+      let cell = row.append("td");
+      cell.text(value);
+    });
+  });
+};
+
 // Create event handlers
-button.on("click", runEnter);
+button.on("click", filterDate);
+resetButton.on("click", resetTable);
