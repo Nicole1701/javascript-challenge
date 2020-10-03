@@ -18,7 +18,6 @@ tableData.forEach((ufoData) => {
 
 // Select the button
 button = d3.select("#filter-btn");
-form = d3.select("#ufo-form");
 
 const runEnter = () => {
   // Prevent the page from refreshing
@@ -28,7 +27,7 @@ const runEnter = () => {
   tbody.html("");
 
   // Define the input element and value property
-  let inputElement = d3.select("#datetime");
+  let inputElement = d3.select("#filter-btn");
   let inputValue = inputElement.property("value");
 
   // Check inputValue
@@ -36,7 +35,11 @@ const runEnter = () => {
 
   // Filter data
   let filteredData = tableData.filter(
-    (sightings) => sightings.datetime === inputValue
+    (sightings) => sightings.datetime === inputValue ||
+                    sightings.city === inputValue ||
+                    sightings.state === inputValue ||
+                    sightings.country === inputValue ||
+                    sightings.shape === inputValue ||
   );
 
   // Check filteredData
