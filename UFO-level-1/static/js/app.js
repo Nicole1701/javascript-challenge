@@ -16,18 +16,38 @@ tableData.forEach((ufoData) => {
   });
 });
 
-//Define filter fields
-let dateFilter = d3.select("#datetime");
+// Select the button
+button = d3.select("#filter-btn");
 
 const runEnter = () => {
-  // Select the button and filter references
-  let button = d3.select("#filter-btn");
-
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
-  let inputDate = dateFilter.property("value").trim();
-  console.log(inputDate)
+  // Clear the previous table
+  tbody.html("");
 
+  // Define the input element and value property
+  let inputElement = d3.select("#datetime");
+  let inputValue = inputElement.property("value");
+
+  // Check inputValue
+  console.log(inputValue);
+
+  // Filter data
+  let filteredData = tableData.filter(
+    (sightings) => sightings.datetime === inputValue
+  );
+
+  // Check filteredData
+  console.log(filteredData);
+
+  filteredData.forEach((selection) => {
+    let row = tbody.append("tr");
+    Object.values(selection).forEach((value) => {
+      let cell = row.append("td");
+      cell.text(value);
+    });
+  });
+};
 // Create event handlers
 button.on("click", runEnter);
