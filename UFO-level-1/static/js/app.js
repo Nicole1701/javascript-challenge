@@ -51,6 +51,7 @@ const filterDate = () => {
   });
 };
 
+// Reset Table Function
 const resetTable = () => {
   tableData.forEach((ufoData) => {
     let row = tbody.append("tr");

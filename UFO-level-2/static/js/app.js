@@ -18,11 +18,9 @@ tableData.forEach((ufoData) => {
 
 // Select the button
 button = d3.select("#filter-btn");
-dateInput = d3.select(#datetime);
-cityInput = d3.select(#city);
-stateInput = d3.select(#state);
-countryInput = d3.select(#country);
-stateInput = d3.select(#shape); 
+resetButton = d3.select("#reset-btn");
+
+
 
 const runEnter = () => {
   // Prevent the page from refreshing
@@ -32,8 +30,12 @@ const runEnter = () => {
   tbody.html("");
 
   // Define the input element and value property
-  let inputElement = d3.select("#filter-btn");
-  let inputValue = inputElement.property("value");
+  let dateInput = d3.select(#datetime);
+  let cityInput = d3.select(#city);
+  let stateInput = d3.select(#state);
+  let countryInput = d3.select(#country);
+  let shapeInput = d3.select(#shape);
+
 
   // Check inputValue
   console.log(inputValue);
@@ -59,5 +61,18 @@ const runEnter = () => {
     });
   });
 };
+
+// Reset Table Function
+const resetTable = () => {
+  tableData.forEach((ufoData) => {
+    let row = tbody.append("tr");
+    Object.values(ufoData).forEach((value) => {
+      let cell = row.append("td");
+      cell.text(value);
+    });
+  });
+};
+
 // Create event handlers
 button.on("click", runEnter);
+resetButton.on("click", resetTable);
