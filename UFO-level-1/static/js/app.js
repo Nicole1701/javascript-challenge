@@ -18,6 +18,7 @@ tableData.forEach((ufoData) => {
 
 // Select the button
 button = d3.select("#filter-btn");
+form = d3.select("#ufo-form");
 
 const runEnter = () => {
   // Prevent the page from refreshing
