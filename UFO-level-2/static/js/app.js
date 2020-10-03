@@ -20,8 +20,6 @@ tableData.forEach((ufoData) => {
 button = d3.select("#filter-btn");
 resetButton = d3.select("#reset-btn");
 
-
-
 const runEnter = () => {
   // Prevent the page from refreshing
   d3.event.preventDefault();
@@ -30,12 +28,17 @@ const runEnter = () => {
   tbody.html("");
 
   // Define the input element and value property
-  let dateInput = d3.select(#datetime);
-  let cityInput = d3.select(#city);
-  let stateInput = d3.select(#state);
-  let countryInput = d3.select(#country);
-  let shapeInput = d3.select(#shape);
+  let dateInput = d3.select("#datetime");
+  let cityInput = d3.select("#city");
+  let stateInput = d3.select("#state");
+  let countryInput = d3.select("#country");
+  let shapeInput = d3.select("#shape");
 
+  let dateValue = dateInput.value.trim().toLowerCase();
+  let cityValue = dateInput.value.trim().toLowerCase();
+  let stateValue = dateInput.value.trim().toLowerCase();
+  let countryValue = dateInput.value.trim().toLowerCase();
+  let shapeValue = dateInput.value.trim().toLowerCase();
 
   // Check inputValue
   console.log(inputValue);
@@ -43,11 +46,11 @@ const runEnter = () => {
   // Filter data
   let filteredData = tableData.filter(
     (sightings) =>
-      sightings.datetime === inputValue &&
-      sightings.city === inputValue &&
-      sightings.state === inputValue &&
-      sightings.country === inputValue &&
-      sightings.shape === inputValue
+      sightings.datetime === dateValue &&
+      sightings.city === cityValue &&
+      sightings.state === stateValue &&
+      sightings.country === countryValue &&
+      sightings.shape === shapeValue
   );
 
   // Check filteredData
