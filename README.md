@@ -2,7 +2,7 @@
 
 # Aliens-R-Real - JavaScript and DOM Manipulation
 
-![UFO in Sky](static/images/ufo_picture_2.jpg)
+![UFO in Sky](ufo-level-1/static/images/ufo_picture_2.jpg)
 
 ## Before you Begin
 
@@ -51,4 +51,4 @@ Create a basic HTML web page or use the index.html file provided (we recommend b
 
 ### Screenshot of Web Page
 
-![Screenshot of UFO Page](static/images/ufo_level_2.JPG)
+![Screenshot of UFO Page](ufo-level-1/static/images/ufo_level_2.JPG)
