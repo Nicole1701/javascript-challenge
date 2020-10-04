@@ -9,7 +9,7 @@
 - Level 1 Page can be found here: [UFO-Level_1](https://nicole1701.github.io/javascript-challenge/UFO-level-1/index.html)
 - Level 2 Page can be found here: [UFO-Level-2](https://nicole1701.github.io/javascript-challenge/UFO-level-2/index.html)
 - This data set is small and only contains US data from 1/1/2010 to 1/13/2010.
-- An Easter egg has been added for if you put in a filter condition that brings up no data. Be sure to try it!
+- An Easter egg has been added if you put in a filter condition that brings up no data. Be sure to try it!
 
 ## Background
 
