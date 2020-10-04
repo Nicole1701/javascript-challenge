@@ -46,7 +46,13 @@ const filterDate = () => {
   );
 
   if (filteredData.length == 0) {
-    alert("No UFO's found. Clearly this is a conspiracy! Best try again.");
+    alert(
+      "No sightings found. Clearly this is a conspiracy! Remember, the truth is out there, but so are lies. Please try again."
+    );
+    var snd = new Audio("static/sound/xfiles.mp3");
+    snd.play();
+
+    // alert("No UFO's found. Clearly this is a conspiracy! Best try again.");
     clearText();
   }
 
