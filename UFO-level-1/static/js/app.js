@@ -51,8 +51,6 @@ const filterDate = () => {
     );
     var snd = new Audio("static/sound/xfiles.mp3");
     snd.play();
-
-    // alert("No UFO's found. Clearly this is a conspiracy! Best try again.");
     clearText();
   }
 
