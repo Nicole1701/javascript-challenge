@@ -23,6 +23,7 @@ showTable();
 
 // Select the buttons
 button = d3.select("#filter-btn");
+clearButton = d3.select("#clear-btn");
 resetButton = d3.select("#reset-btn");
 
 const runEnter = () => {
@@ -58,6 +59,11 @@ const runEnter = () => {
     );
   });
 
+  if (filteredData.length == 0) {
+    alert("No UFO's found. Clearly this is a conspiracy! Best try again.");
+    clearText();
+  }
+
   // Console.log the filteredData
   console.log(filteredData);
 
@@ -71,10 +77,18 @@ const runEnter = () => {
   });
 };
 
-// function (clearFilters){
-
-// }
+// Add clear filter function
+// stackoverflow.com/questions/11072031/clearing-multiple-text-input-boxes-with-one-name
+function clearText() {
+  document.getElementById("datetime").value = "";
+  document.getElementById("city").value = "";
+  document.getElementById("state").value = "";
+  document.getElementById("country").value = "";
+  document.getElementById("shape").value = "";
+  showTable();
+}
 
 // Create event handlers
 button.on("click", runEnter);
+clearButton.on("click", clearText);
 resetButton.on("click", showTable);

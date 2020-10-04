@@ -7,17 +7,23 @@ console.log(data);
 // Get a reference to the table body
 let tbody = d3.select("tbody");
 
-// Populate the table in html
-tableData.forEach((ufoData) => {
-  let row = tbody.append("tr");
-  Object.values(ufoData).forEach((value) => {
-    let cell = row.append("td");
-    cell.text(value);
+// Create function to show full table
+function showTable() {
+  tableData.forEach((ufoData) => {
+    let row = tbody.append("tr");
+    Object.values(ufoData).forEach((value) => {
+      let cell = row.append("td");
+      cell.text(value);
+    });
   });
-});
+}
+
+// Show table when loading page
+showTable();
 
 // Select the button
 button = d3.select("#filter-btn");
+clearButton = d3.select("#clear-btn");
 resetButton = d3.select("#reset-btn");
 
 const filterDate = () => {
@@ -38,6 +44,11 @@ const filterDate = () => {
   let filteredData = tableData.filter(
     (sightings) => sightings.datetime === inputValue
   );
+
+  if (filteredData.length == 0) {
+    alert("No UFO's found. Clearly this is a conspiracy! Best try again.");
+    clearText();
+  }
 
   // Check filteredData
   console.log(filteredData);
@@ -62,6 +73,12 @@ const resetTable = () => {
   });
 };
 
+function clearText() {
+  document.getElementById("datetime").value = "";
+  showTable();
+}
+
 // Create event handlers
 button.on("click", filterDate);
+clearButton.on("click", clearText);
 resetButton.on("click", resetTable);
